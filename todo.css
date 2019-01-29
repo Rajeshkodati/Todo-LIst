@@ -1,0 +1,43 @@
+#main{
+    width:500px;
+    position:fixed;
+    top:30%;
+    left:30%;
+    background-color:#e2e2e2;
+}
+#list_create{
+    width:300px;
+    padding:10px;
+    border-radius:10px;
+    line-height: 30px;
+}
+#add{
+    margin:5px;
+    width:80px;
+    line-height:40px;
+    border-radius: 10px;
+    background-color:#b3ffe6;
+    color:#000;
+
+}
+.newItem{
+    width:80%;
+    height:40px;
+    background-color:#e2e2e2;
+
+}
+.newItem span{
+   color:red;
+   font-family:'Times New Roman', Times, serif;
+   font-size: 25px;
+   margin-left:20px;
+}
+.newItem .del{
+    position: absolute;
+    right:10px;
+}
+.newItem .edit{
+    position: absolute;
+    right:50px;
+}
+
