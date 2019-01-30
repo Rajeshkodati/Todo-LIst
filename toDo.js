@@ -84,20 +84,23 @@ function addItemList(){
    div.appendChild(inputChange);
    div.appendChild(deleteItem);
    div.appendChild(editItem);
-   
-    inputChane = 
     div.appendChild(inputChange);
    deleteItem.addEventListener('click',function(){
        div.style.display = 'none';
    });
    editItem.addEventListener('click',function(){
     //itemMain.removeChild(div);
+    inputChange.addEventListener('blur',function(){
+        span.innerHTML = this.value;
+        this.style.display = 'none';
+    });
     inputChange.style.opacity ='1';
     inputChange.value = span.innerHTML;
-    span.innerHTML ='';
-    inputChange.classList.add('span');
+    //span.innerHTML ='';
+    //inputChange.classList.add('span');
     //dataStore = inputChange.value;
-    dataStore.push(inputChange.value);
-   })
+    //dataStore.push(inputChange.value);
+   });
+
 }
 
