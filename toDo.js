@@ -45,7 +45,7 @@
 const itemMain  = document.getElementById('main');
 const itemInput = document.getElementById('list_create');
 //const childItem = document.getElementById('child');
-const addItem = document.getElementById('add')
+const addItem = document.getElementById('add');
 
 let dataStore =[];
 
@@ -55,7 +55,7 @@ addItem.addEventListener('click',function(){
     }
     else{
         addItemList();
-        dataStore.push(itemInput.value);
+        //dataStore.push(itemInput.value);
         console.log(dataStore);
         itemInput.value = '';
     }
@@ -67,6 +67,7 @@ function addItemList(){
    const div =document.createElement('div');
    div.classList.add('newItem');
    const span = document.createElement('span');
+   span.classList.add('span')
    span.innerHTML = itemInput.value;
    //console.log(span)
    const deleteItem =document.createElement('img');
@@ -74,17 +75,29 @@ function addItemList(){
    deleteItem.classList.add('del')
    const editItem =document.createElement('img');
    editItem.src ='edit.png';
-   editItem.classList.add('edit')
+   editItem.classList.add('edit');
+   const  inputChange = document.createElement('input');
+
+   inputChange.classList.add('edit-input')
    itemMain.appendChild(div);
    div.appendChild(span);
+   div.appendChild(inputChange);
    div.appendChild(deleteItem);
    div.appendChild(editItem);
+   
+    inputChane = 
+    div.appendChild(inputChange);
    deleteItem.addEventListener('click',function(){
        div.style.display = 'none';
    });
    editItem.addEventListener('click',function(){
-    itemMain.removeChild(div);
-    console.log(dataStore);
+    //itemMain.removeChild(div);
+    inputChange.style.opacity ='1';
+    inputChange.value = span.innerHTML;
+    span.innerHTML ='';
+    inputChange.classList.add('span');
+    //dataStore = inputChange.value;
+    dataStore.push(inputChange.value);
    })
 }
 
